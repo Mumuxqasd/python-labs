@@ -1,0 +1,7 @@
+{
+    "clients_json": "data/clients.json",
+    "tariffs_json": "data/tariffs.json",
+    "csv_file": "data/clients.csv",
+    "backup_dir": "backups",
+    "log_file": "provider.log"
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Старт",
+        "speed": 50,
+        "monthly_fee": 450.0
+    },
+    {
+        "name": "Дом 100",
+        "speed": 100,
+        "monthly_fee": 650.0
+    },
+    {
+        "name": "Игровой",
+        "speed": 300,
+        "monthly_fee": 990.0
+    },
+    {
+        "name": "Бизнес",
+        "speed": 500,
+        "monthly_fee": 1600.0
+    }
+]
