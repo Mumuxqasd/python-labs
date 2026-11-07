@@ -1,0 +1,2 @@
+{% extends "base.html" %}
+{% block content %}<h1>{{ device.name }}</h1><p>{{ device.device_type }} | {{ device.room }} | {{ device.status }}</p><a href="/devices/{{ device.id }}/edit">Редактировать</a><h2>Показания</h2><ul>{% for m in measurements %}<li>{{ m.value }}</li>{% endfor %}</ul>{% endblock %}

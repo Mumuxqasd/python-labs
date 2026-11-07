@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Устройства</h1>
+<form><input name="search" placeholder="Поиск"><select name="status"><option value="">Все</option><option>online</option><option>offline</option></select><button>Найти</button></form>
+<table border="1"><tr><th>ID</th><th>Название</th><th>Комната</th><th>Статус</th></tr>{% for d in devices %}<tr><td>{{ d.id }}</td><td><a href="/devices/{{ d.id }}">{{ d.name }}</a></td><td>{{ d.room }}</td><td>{{ d.status }}</td></tr>{% endfor %}</table>
+{% endblock %}

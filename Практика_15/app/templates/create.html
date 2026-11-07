@@ -1,0 +1,2 @@
+{% extends "base.html" %}
+{% block content %}<h1>Новое устройство</h1>{% if error %}<p>{{ error }}</p>{% endif %}<form method="post"><input name="user_id" placeholder="User ID"><input name="name" placeholder="Название"><input name="device_type" placeholder="Тип"><input name="room" placeholder="Комната"><select name="status"><option>online</option><option>offline</option></select><button>Создать</button></form>{% endblock %}

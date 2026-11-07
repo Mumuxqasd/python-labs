@@ -1,0 +1,2 @@
+{% extends "base.html" %}
+{% block content %}<h1>Редактирование</h1><form method="post"><input name="name" value="{{ device.name }}"><input name="room" value="{{ device.room }}"><select name="status"><option {% if device.status == 'online' %}selected{% endif %}>online</option><option {% if device.status == 'offline' %}selected{% endif %}>offline</option></select><button>Сохранить</button></form>{% endblock %}
