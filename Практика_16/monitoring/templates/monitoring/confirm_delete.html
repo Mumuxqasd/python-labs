@@ -1,0 +1,1 @@
+{% extends "monitoring/base.html" %}{% block content %}<h1>Удалить {{ server.hostname }}?</h1><form method="post">{% csrf_token %}<button>Удалить</button></form>{% endblock %}
