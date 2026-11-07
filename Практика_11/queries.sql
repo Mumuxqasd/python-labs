@@ -1,0 +1,15 @@
+SELECT * FROM servers;
+SELECT * FROM servers WHERE status = 'offline';
+SELECT * FROM servers ORDER BY cpu_load DESC;
+SELECT s.name, m.cpu_load, m.memory_load FROM servers s JOIN metrics m ON m.server_id = s.id;
+SELECT s.name, t.name AS tag FROM servers s JOIN server_tags st ON st.server_id = s.id JOIN tags t ON t.id = st.tag_id;
+SELECT s.name, t.name AS tag FROM servers s LEFT JOIN server_tags st ON st.server_id = s.id LEFT JOIN tags t ON t.id = st.tag_id;
+SELECT status, COUNT(*) AS count FROM servers GROUP BY status;
+SELECT status, AVG(cpu_load) AS average_cpu FROM servers GROUP BY status HAVING AVG(cpu_load) >= 10;
+SELECT COUNT(*) AS count, AVG(cpu_load) AS average_cpu, SUM(cpu_load) AS total_cpu FROM servers;
+INSERT INTO servers(name, host, status, cpu_load) VALUES ('test-1', '10.0.0.99', 'online', 10);
+UPDATE servers SET cpu_load = 25 WHERE name = 'test-1';
+DELETE FROM servers WHERE name = 'test-1';
+SELECT * FROM servers WHERE cpu_load > (SELECT AVG(cpu_load) FROM servers);
+SELECT * FROM servers WHERE status = 'online' AND cpu_load >= 30;
+SELECT s.name, COUNT(m.id) AS metrics_count FROM servers s LEFT JOIN metrics m ON m.server_id = s.id GROUP BY s.id, s.name;
